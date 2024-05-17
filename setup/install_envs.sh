@@ -1,7 +1,7 @@
 cd src/env/dm_control
-pip install -e .
+python -m pip install -e .
 
 cd ../dmc2gym
-pip install -e .
+python -m pip install -e .
 
 cd ../../..
