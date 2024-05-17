@@ -96,9 +96,18 @@ We assume that you have access to a GPU with CUDA >=9.2 support. All dependencie
 ```
 conda env create -f setup/conda.yaml
 conda activate dmcgb
-sh setup/install_envs.sh
+sh setup/install_envs.sh # Changes were made for compatibility with CUDA 12.3
 ```
 
+## Additional setup (2024 incompatible dependencies with [fixes](https://github.com/nicklashansen/dmcontrol-generalization-benchmark/issues/23))
+
+1. Download old version of [mujoco](https://www.roboti.us/download.html) and paste it in your home .mujoco folder
+2. Download free mujoco [license](https://www.roboti.us/license.html) and paste it in your home .mujoco folder
+3. Downgrade gym version 
+```
+python3 -m pip uninstall gym
+python3 -m pip install gym==0.19.0
+```
 
 ## Datasets
 Part of this repository relies on external datasets. SODA uses the [Places](http://places2.csail.mit.edu/download.html) dataset for data augmentation, which can be downloaded by running
@@ -126,6 +135,9 @@ The `scripts` directory contains training and evaluation bash scripts for all th
 python3 src/train.py \
   --algorithm svea \
   --seed 0
+```
+```
+python3 src/train.py --algorithm svea --seed 0 --task_name walk
 ```
 
 to run SVEA on the default task, `walker_walk`. This should give you an output of the form:
