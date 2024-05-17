@@ -137,7 +137,7 @@ python3 src/train.py \
   --seed 0
 ```
 ```
-python3 src/train.py --algorithm svea --seed 0 --task_name walk
+python3 src/train.py --algorithm soda --seed 0 --task_name walk
 ```
 
 to run SVEA on the default task, `walker_walk`. This should give you an output of the form:
