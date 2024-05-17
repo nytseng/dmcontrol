@@ -1,7 +1,6 @@
 import gym
 from gym.envs.registration import register
 
-
 def make(
         domain_name,
         task_name,
@@ -33,7 +32,7 @@ def make(
     max_episode_steps = (episode_length + frame_skip - 1) // frame_skip
     time_limit = 1e6
 
-    if not env_id in gym.envs.registry.env_specs:
+    if env_id not in gym.envs.registry.env_specs:
         task_kwargs = {}
         if seed is not None:
             task_kwargs['random'] = seed
@@ -61,4 +60,5 @@ def make(
             ),
             max_episode_steps=max_episode_steps,
         )
+
     return gym.make(env_id)
