@@ -108,6 +108,7 @@ sh setup/install_envs.sh # Changes were made for compatibility with CUDA 12.3
 python3 -m pip uninstall gym
 python3 -m pip install gym==0.19.0
 ```
+## CHTC usage:
 
 ## Datasets
 Part of this repository relies on external datasets. SODA uses the [Places](http://places2.csail.mit.edu/download.html) dataset for data augmentation, which can be downloaded by running
